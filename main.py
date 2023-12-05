@@ -25,12 +25,21 @@ def calculate_metrics(stock_data):
 
 def plot_stock_data(stock_data, ticker):
     plt.figure(figsize=(10, 6))
-    stock_data['Adj Close'].plot(label=ticker)
+
+    #background color and style
+    plt.gca().set_facecolor('grey')
+    stock_data['Adj Close'].plot(label=ticker, color='blue')
+
     plt.title(f'{ticker} Stock Price Over Time')
-    plt.xlabel('Date')
-    plt.ylabel('Adjusted Close Price')
-    plt.legend()
+
+    plt.xlabel('Date', color='white')
+    plt.ylabel('Adjusted Close Price', color='white')
+
+    plt.legend(facecolor='black', edgecolor='white', labelcolor='white')
+
     plt.show()
+
+
 
 if __name__ == "__main__":
     # Get user input
